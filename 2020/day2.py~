@@ -1,0 +1,29 @@
+import pandas as pd
+
+input_df = pd.read_csv('day2_input.txt', header=None)
+input_df.columns=['input']
+input_list = input_df['input'].tolist()
+
+print('input read in. there are {len} items in input'.format(len=len(input_list)))
+
+count = 0
+print = True
+
+for i in input_list:
+    split_list_hyphen = str(i).split('-',1)
+    letter_min = split_list_hyphen[0]
+    split_list_space = split_list_hyphen[1].split(' ')
+    letter_max = split_list_space[0]
+    letter = split_list_space[0].replace(':', '')
+    password = split_list_space[2]
+
+    if print is True:
+        print(split_list_hyphen)
+        print(letter_min)
+        print(split_list_space)
+        print(letter_max)
+        print(letter)
+        print(password)
+    
+    print = False
+    
