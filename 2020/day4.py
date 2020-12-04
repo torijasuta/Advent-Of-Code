@@ -50,13 +50,13 @@ pt2_df = pt2_df[pt2_df['eyr']>=2020]
 pt2_df = pt2_df[pt2_df['eyr']<=2030]
 
 # height #150-193cm or #59-76in
-pt2_df = pt2_df[pt2_df['hgt'].str.contains('1[5-8][0-9]cm|1[9][0-3]cm|59in|6[0-9]in|7[0-6]in')]
-pt2_df = pt2_df[pt2_df['hcl'].str.contains('#[a-f0-9]{6,6}')]  # only these chars
+pt2_df = pt2_df[pt2_df['hgt'].str.contains('^1[5-8][0-9]cm$|^1[9][0-3]cm$|^59in$|^6[0-9]in$|^7[0-6]in$')]
+pt2_df = pt2_df[pt2_df['hcl'].str.contains('^#[a-f0-9]{6,6}$')]  # only these chars
 pt2_df = pt2_df[pt2_df['hcl'].str.len()==7]  # exactly 7 chars
 
 pt2_df = pt2_df[pt2_df['ecl'].isin(['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'])]
 
-pt2_df = pt2_df[pt2_df['pid'].str.contains('[0-9]{9,9}')]  # only these digits
+pt2_df = pt2_df[pt2_df['pid'].str.contains('^[0-9]{9,9}$')]  # only these digits
 pt2_df = pt2_df[pt2_df['pid'].str.len()==9]  # exactly 9 chars
 
 # part two answer
